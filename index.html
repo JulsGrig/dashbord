@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Персональный дашборд</title>
+  <link rel="stylesheet" href="styles/main.css" />
+  <link rel="stylesheet" href="styles/components.css" />
+</head>
+<body>
+  <header class="topbar">
+    <h1>Персональный дашборд</h1>
+    <div class="toolbar" role="toolbar" aria-label="Добавление виджетов">
+      <button type="button" data-add="todo">+ Список дел</button>
+      <button type="button" data-add="quote">+ Цитата</button>
+      <button type="button" data-add="weather">+ Погода</button>
+      <button type="button" data-add="currency">+ Курсы валют</button>
+    </div>
+  </header>
+
+  <main id="dashboard" class="dashboard" aria-live="polite"></main>
+
+  <template id="widget-template">
+    <section class="widget" role="region">
+      <header class="widget__head">
+        <h2 class="widget__title"></h2>
+        <div class="widget__actions">
+          <button type="button" class="widget__btn" data-action="minimize"
+                  aria-label="Свернуть">–</button>
+          <button type="button" class="widget__btn" data-action="close"
+                  aria-label="Закрыть">×</button>
+        </div>
+      </header>
+      <div class="widget__body"></div>
+    </section>
+  </template>
+
+  <script type="module" src="main.js"></script>
+</body>
+</html>
